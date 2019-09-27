@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import classNames from 'classnames'
 import posed, { PoseGroup } from 'react-pose'
 import GameContext from './GameContext'
 import './TicTacToe.css'
@@ -46,7 +47,7 @@ export default function TicTacToe(props) {
           <button
             key={`tic-tac-toe-space-${index}`}
             onClick={() => handleClick(spaceValue, index)}
-            className="TicTacToe-space bg-white focus:outline-none focus:shadow-outline"
+            className={classNames('TicTacToe-space bg-white cursor-pointer focus:outline-none focus:shadow-outline', winner && 'bg-gray-100 text-gray-400 cursor-not-allowed')}
             disabled={winner && "disabled"}
           >
             <PoseGroup>
