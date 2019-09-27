@@ -1,6 +1,4 @@
 .TicTacToe {
-  border: 0.5rem solid #ccc;
-  background-color: #ccc;
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: 1fr 1fr 1fr;

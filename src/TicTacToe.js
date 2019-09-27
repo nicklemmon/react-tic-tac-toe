@@ -30,13 +30,13 @@ export default function TicTacToe(props) {
   }
 
   return (
-    <div className="TicTacToe">
+    <div className="TicTacToe border-solid border-gray-300 bg-gray-300">
       {boardState.map((spaceValue, index) => {
         return (
           <button
             key={`tic-tac-toe-space-${index}`}
             onClick={() => handleClick(spaceValue, index)}
-            className="TicTacToe-space"
+            className="TicTacToe-space bg-white"
             disabled={winner && "disabled"}
           >
             {spaceValue}
