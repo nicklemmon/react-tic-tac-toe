@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import posed, { PoseGroup } from 'react-pose'
 import GameContext from './GameContext'
 import './TicTacToe.css'
 
@@ -29,6 +30,15 @@ export default function TicTacToe(props) {
     }
   }
 
+  const SpaceValue = posed.div({
+    enter: {
+      scale: 1
+    },
+    exit: {
+      scale: 0
+    }
+  })
+
   return (
     <div className="TicTacToe border-solid border-gray-300 bg-gray-300">
       {boardState.map((spaceValue, index) => {
@@ -36,10 +46,17 @@ export default function TicTacToe(props) {
           <button
             key={`tic-tac-toe-space-${index}`}
             onClick={() => handleClick(spaceValue, index)}
-            className="TicTacToe-space bg-white"
+            className="TicTacToe-space bg-white focus:outline-none focus:shadow-outline"
             disabled={winner && "disabled"}
           >
-            {spaceValue}
+            <PoseGroup>
+              { spaceValue && [
+                  <SpaceValue key="value">
+                    {spaceValue}
+                  </SpaceValue>
+                ]
+              }
+            </PoseGroup>
           </button>
         )
       })}
