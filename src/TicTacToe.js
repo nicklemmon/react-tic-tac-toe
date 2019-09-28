@@ -47,7 +47,7 @@ export default function TicTacToe(props) {
           <button
             key={`tic-tac-toe-space-${index}`}
             onClick={() => handleClick(spaceValue, index)}
-            className={classNames('TicTacToe-space bg-white cursor-pointer focus:outline-none focus:shadow-outline', winner && 'bg-gray-100 text-gray-400 cursor-not-allowed')}
+            className={classNames('TicTacToe-space bg-white cursor-pointer focus:outline-none focus:shadow-outline', winner && 'bg-gray-200 text-gray-400 cursor-not-allowed')}
             disabled={winner && "disabled"}
           >
             <PoseGroup>

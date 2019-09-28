@@ -1,8 +1,6 @@
 export default function getWinner(gameStateArr, currentPlayer) {
   let winner
 
-  console.log(gameStateArr);
-
   const checkAgainstSolutions = (index1, index2, index3, arr = gameStateArr, player = currentPlayer) => {
     if (arr[index1] === player && arr[index2] === player && arr[index3] === player) {
       winner = player
@@ -26,7 +24,5 @@ export default function getWinner(gameStateArr, currentPlayer) {
     checkAgainstSolutions(solution[0], solution[1], solution[2])
   })
 
-  console.log('winner', winner)
-  
   return winner
 }

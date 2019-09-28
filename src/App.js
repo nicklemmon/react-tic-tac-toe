@@ -29,14 +29,16 @@ function App() {
         setBoardState
       }}
     >
-      <div className="App">
+      <div className="App bg-gray-100">
         <div className="App-wrapper">
+          <h1 className="text-center text-3xl font-bold text-gray-700 mb-6">Tic Tac Toe!</h1>
+
           <ScoreBoard/>
 
           <TicTacToe/>
 
           <ResetBtn onClick={handleResetClick}>
-            Reset Game
+            Start Over
           </ResetBtn>
         </div>
       </div>
